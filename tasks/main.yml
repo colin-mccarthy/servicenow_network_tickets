@@ -1,6 +1,7 @@
 ---
 
-  - import_role:
+  - name: import network-engine role
+    import_role:
       name: ansible-network.network-engine
 
   - name: include vars
