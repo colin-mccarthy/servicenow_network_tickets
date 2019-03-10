@@ -15,7 +15,7 @@
 
   - name: parse show version
     command_parser:
-      file: "parsers/show_version.yaml"
+      file: "files/show_version.yaml"
       content: "{{ version.stdout.0 }}"
 
 
