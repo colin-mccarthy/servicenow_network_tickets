@@ -4,9 +4,6 @@
     import_role:
       name: ansible-network.network-engine
 
-  - name: include vars
-    include_vars: incident_vars.yml
-
   - name: show version
     ios_command:
       commands:
