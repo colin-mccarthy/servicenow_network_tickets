@@ -12,7 +12,7 @@
 
   - name: parse show version
     command_parser:
-      file: "files/show_version.yaml"
+      file: "files/show_version.yml"
       content: "{{ version.stdout.0 }}"
 
 
