@@ -48,4 +48,3 @@ galaxy_info:
 
 dependencies:
   - ansible-network.network-engine
-  - ansible-network.cisco_ios
