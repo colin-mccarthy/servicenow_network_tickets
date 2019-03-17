@@ -1,6 +1,8 @@
 # servicenow_network_tickets
 Ansible role for ServiceNow network tickets
 
+Currently supports network devices that are running on Cisco IOS.
+
 
 Makes sure to create the `device uptime` & `ios version` fields in your ServiceNow incident template.
  This is exaplained in the blog post below.
