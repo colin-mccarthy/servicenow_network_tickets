@@ -3,6 +3,9 @@ Ansible role for ServiceNow network tickets
 
 Currently supports network devices that are running on Cisco IOS.
 
+
+Example Playbook:
+
 ```
 
 - hosts: ios
@@ -55,8 +58,24 @@ Currently supports network devices that are running on Cisco IOS.
 
 ```
 
+Example Inventory:
 
-Makes sure to create the `device uptime` & `ios version` fields in your ServiceNow incident template.
+
+```
+[ios]
+192.168.161.9  ansible_ssh_host=192.168.161.9  
+
+[ios:vars]
+
+ansible_network_os=ios
+ansible_connection=network_cli
+```
+
+
+
+
+
+Make sure you create the `device uptime` & `ios version` fields in your ServiceNow incident template.
  This is exaplained in the blog post below.
 
 The `hostname` parameter has now also been added in the data section of the API call. Make sure to create that field in your incident template in SNOW.
