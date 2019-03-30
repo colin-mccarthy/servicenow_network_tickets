@@ -1,14 +1,12 @@
 ---
 
-  - name: show version
-    ios_command:
-      commands:
-        - show version
-    register: version
+  - name: Include task list in play
+    include_tasks: "files/{{ ansible_network_os }}_tasks.yaml"
+
 
   - name: parse show version
     command_parser:
-      file: "files/show_version.yaml"
+      file: "files/{{ ansible_network_os }}_version.yaml"
       content: "{{ version.stdout.0 }}"
 
 
