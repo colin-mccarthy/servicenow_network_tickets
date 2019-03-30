@@ -1,7 +1,7 @@
 ---
 
   - name: Include task list in play
-    import_tasks: "files/{{ ansible_network_os }}_tasks.yaml"
+    include_tasks: "files/{{ ansible_network_os }}_tasks.yaml"
 
 
   - name: parse show version
