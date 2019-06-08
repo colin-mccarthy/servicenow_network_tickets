@@ -47,4 +47,4 @@ galaxy_info:
     - ios
 
 dependencies:
-  - ansible-network.network-engine
+  - clay584.parse_genie

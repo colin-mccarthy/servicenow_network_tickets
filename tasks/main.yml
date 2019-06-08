@@ -1,13 +1,15 @@
 ---
 
-  - name: Include task list in play
-    include_tasks: "files/{{ ansible_network_os }}_tasks.yaml"
+  - name: show version
+    ios_command:
+      commands:
+        - show version
+    register: version
 
 
-  - name: parse show version
-    command_parser:
-      file: "files/{{ ansible_network_os }}_version.yaml"
-      content: "{{ version.stdout.0 }}"
+  - name: Set Fact Genie Filter
+    set_fact: 
+      pyats_version: "{{ version['stdout'][0] | parse_genie(command='show version', os='ios') }}"
 
 
   - name: Create an incident
@@ -19,10 +21,11 @@
       instance: "{{ SN_INSTANCE }}"
       data:
         priority: "{{ priority}}"
-        u_device_up_time: "{{ system_facts.uptime }}"
-        u_ios_version: "{{ system_facts.version }}"
+        u_device_up_time: "{{ pyats_version.version.uptime }}"
+        u_ios_version: "{{ pyats_version.version.version }}"
         u_hostname: "{{ inventory_hostname }}"
         short_description: "This ticket was created by Ansible"
     register: new_incident
+
 
   - debug: var=new_incident.record.number
