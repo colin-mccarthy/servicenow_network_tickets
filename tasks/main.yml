@@ -26,6 +26,7 @@
         u_hostname: "{{ pyats_version.version.hostname }}"
         u_platform: "{{ pyats_version.version.platform }}"
         u_device_type: "{{ pyats_version.version.rtr_type }}"
+        U_serial_number: "{{ pyats_version.version.chassis_sn }}"
         short_description: "This ticket was created by Ansible"
     register: new_incident
 
