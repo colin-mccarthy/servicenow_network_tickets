@@ -27,6 +27,7 @@
         u_platform: "{{ pyats_version.version.platform }}"
         u_device_type: "{{ pyats_version.version.rtr_type }}"
         u_serial_number: "{{ pyats_version.version.chassis_sn }}"
+        u_last_reload_reason: "{{ pyats_version.version.last_reload_reason }}"
         short_description: "This ticket was created by Ansible"
     register: new_incident
 
