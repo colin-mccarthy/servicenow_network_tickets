@@ -19,7 +19,7 @@
       instance: "{{ SN_INSTANCE }}"
       data:
         priority: "{{ priority}}"
-        u_device_up_time: "{{ system_facts.uptime }}"
+        u_device_uptime: "{{ system_facts.uptime }}"
         u_ios_version: "{{ system_facts.version }}"
         u_hostname: "{{ inventory_hostname }}"
         short_description: "This ticket was created by Ansible"
