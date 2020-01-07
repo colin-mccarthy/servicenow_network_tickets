@@ -25,4 +25,4 @@
         short_description: "This ticket was created by Ansible"
     register: new_incident
 
-  - debug: var=new_incident.record
+  - debug: var=new_incident.record.number
