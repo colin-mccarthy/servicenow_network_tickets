@@ -46,5 +46,4 @@ galaxy_info:
     - cisco
     - ios
 
-dependencies:
-  - clay584.parse_genie
+dependencies: []
